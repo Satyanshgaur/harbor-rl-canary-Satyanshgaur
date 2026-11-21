@@ -2,7 +2,6 @@
 
 ## 1. Loom Walkthrough Video
 - **Video URL:** [Watch 5-Minute Walkthrough](https://www.loom.com/share/cd3df8991c14491c94c6f69481c6f602)
-  *(Make sure link sharing is set to "Anyone with the link can view")*
 
 ## 2. Task & Calibration Summary
 - **Bug 1 (Easy):** The argument check expects 3 command-line arguments instead of 2, so the documented command always exits with a usage error.
