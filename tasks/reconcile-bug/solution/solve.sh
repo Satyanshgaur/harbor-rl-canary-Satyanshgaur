@@ -8,33 +8,28 @@ cat > /app/reconcile.py <<'PYEOF'
 import json
 import re
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime
 from decimal import Decimal
 
-TIMESTAMP_RE = re.compile(r"([0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2})(Z|[+-][0-9]{2}:[0-9]{2})")
 AMOUNT_RE = re.compile(r"[0-9]+(\.[0-9]{1,2})?")
 STATUSES = {"SUCCESS", "FAILED", "PENDING"}
-EPOCH = datetime(1970, 1, 1)
 
 
 def parse_timestamp(value):
-    """Return seconds since the epoch in UTC, or None if invalid."""
-    m = TIMESTAMP_RE.fullmatch(value)
-    if not m:
+    """Return the timestamp as an aware datetime, or None if invalid."""
+    if not re.fullmatch(
+        r"[0-9]{4}-[0-9]{2}-[0-9]{2}T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]"
+        r"(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])",
+        value,
+    ):
         return None
     try:
-        local = datetime.strptime(m.group(1), "%Y-%m-%dT%H:%M:%S")
+        ts = datetime.fromisoformat(value)
     except ValueError:
         return None
-    seconds = (local - EPOCH) // timedelta(seconds=1)
-    offset = m.group(2)
-    if offset == "Z":
-        return seconds
-    sign = 1 if offset[0] == "+" else -1
-    hours, minutes = int(offset[1:3]), int(offset[4:6])
-    if hours > 23 or minutes > 59:
+    if ts.tzinfo is None:
         return None
-    return seconds - sign * (hours * 3600 + minutes * 60)
+    return ts
 
 
 def parse_row(line):
