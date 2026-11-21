@@ -64,6 +64,7 @@ TX1,2026-01-05T09:00:00Z,120.50,SUCCESS
 TX5,2026-01-05T12:30:00Z,30.00,FAILED
 TX2,2026-01-05T09:05:00Z,40.00,FAILED
 TX3,2026-01-05T09:10:00Z,15.25,PENDING
+TX7,2026-01-05 11:00:00Z,8.00,SUCCESS
 TX4,2026-01-05T09:15:00Z,abc,SUCCESS
 TX5,2026-01-05T10:00:00Z,30.00,SUCCESS
 TX6,2026-01-05T10:20:00Z,9.99,SUCCESS
@@ -75,7 +76,8 @@ Expected output:
 {"total_valid_amount": 130.49, "valid_count": 2, "failed_count": 2}
 ```
 
-TX4 is malformed and is skipped. TX5's 12:30 row is its latest, even though it comes first in the
+TX4 and TX7 are malformed and are skipped: TX4's amount isn't a number, and TX7's timestamp has a
+space instead of `T`. TX5's 12:30 row is its latest, even though it comes first in the
 file, so TX5 counts as failed and its 10:00 `SUCCESS` is ignored. TX3 is pending.
 Valid: TX1 + TX6 = 120.50 + 9.99 = 130.49. Failed: TX2 and TX5.
 
