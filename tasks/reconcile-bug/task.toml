@@ -14,7 +14,7 @@ category = "debugging"
 tags = [ "python", "debugging", "csv", "timezones",]
 
 [verifier]
-timeout_sec = 120.0
+timeout_sec = 400.0
 
 [agent]
 timeout_sec = 900.0

@@ -20,6 +20,7 @@
 | **Run 2: Ablation** | Added one malformed row (`TX7`, space instead of `T` in the timestamp) to the instruction example | `1 / 1.00` | `1 / 1.00` | `1 / 1.00` | `1.00` | `1.00` | `0.00, 0.00, 0.00` | `0.00, 0.00, 0.00` |
 
 Binary scores come from the original runs (`jobs/2026-11-21__13-27-19` and `jobs/2026-11-21__13-46-05`). Dense scores come from re-scoring each trial's final script under the hardened dense verifier, with 3 seeds each.
+The instruction.md in this repo is the Run 2 version; the Run 1 version is the commit before 27bc701 (the ablation is that single commit). Every job ID is in RUNLOG.md.
 
 ## 4. Trajectory Forensics (`trajectory.json`)
 - **Where the Agent Failed in Run 1:** At step 3 of trial `qEQwgGr`, the agent wrote that `datetime.fromisoformat` "does not understand Z" and added `if value.endswith('Z'): value = value[:-1] + '+00:00'`, which is false on Python 3.12 and left the lenient parsing in place; the other two trials made the same change. The only test any trial ran was the instruction example (e.g. `python3 /app/reconcile.py /tmp/sample.csv` at step 3 of `Y8vBZpP`), which has no lenient timestamps, so all three failed case3 with `valid_count` 3.
