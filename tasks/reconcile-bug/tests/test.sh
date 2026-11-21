@@ -1,19 +1,33 @@
 #!/bin/bash
+# No set -e: every case must run and a reward must always be written.
 
-apt-get update
-apt-get install -y curl
+LOG_DIR=/logs/verifier
+mkdir -p "$LOG_DIR"
+echo 0.0 > "$LOG_DIR/reward.txt"
 
-curl -LsSf https://astral.sh/uv/0.9.7/install.sh | sh
+out=$(mktemp)
+passed=0
 
-source $HOME/.local/bin/env
+for case in case1 case2 case3; do
+    timeout 10 python3 /app/reconcile.py "/tests/$case.csv" > "$out" 2>/dev/null
+    status=$?
+    if [ "$status" -ne 0 ]; then
+        echo "$case: FAIL (reconcile.py exited with code $status)"
+        continue
+    fi
+    if reason=$(python3 /tests/compare.py "$out" "/tests/$case.expected.json" 2>&1 >/dev/null); then
+        echo "$case: PASS"
+        passed=$((passed + 1))
+    else
+        echo "$case: FAIL ($reason)"
+    fi
+done
 
-uvx \
-  --with pytest==8.4.1 \
-  --with pytest-json-ctrf==0.3.5 \
-  pytest --ctrf /logs/verifier/ctrf.json /tests/test_state.py -rA
+rm -f "$out"
 
-if [ $? -eq 0 ]; then
-  echo 1 > /logs/verifier/reward.txt
-else
-  echo 0 > /logs/verifier/reward.txt
+echo "$passed/3 cases passed"
+if [ "$passed" -eq 3 ]; then
+    echo 1.0 > "$LOG_DIR/reward.txt"
 fi
+
+rm -f "$LOG_DIR/reward.json"

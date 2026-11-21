@@ -1,23 +1,23 @@
 schema_version = "1.4"
 
 [task]
-name = "harbor/hello-world"
+name = "satyansh/reconcile-bug"
 version = "1.0.0"
 authors = []
 keywords = []
 
 [metadata]
-author_name = "Alex Shaw"
-author_email = "alexgshaw64@gmail.com"
-difficulty = "easy"
-category = "programming"
-tags = [ "trivial",]
+author_name = "Satyansh Gaur"
+author_email = "satyanshgaur0@gmail.com"
+difficulty = "medium"
+category = "debugging"
+tags = [ "python", "debugging", "csv", "timezones",]
 
 [verifier]
 timeout_sec = 120.0
 
 [agent]
-timeout_sec = 120.0
+timeout_sec = 900.0
 
 [environment]
 build_timeout_sec = 600.0
