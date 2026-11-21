@@ -1,0 +1,146 @@
+{
+    "schema_version": 1,
+    "id": "ee6eba42-8bbc-4420-a393-7c766b463a45",
+    "task_name": "satyansh/reconcile-bug",
+    "trial_name": "reconcile-bug__stbD84M",
+    "trial_uri": "file:///home/satyansh/harbor-rl-canary-Satyanshgaur/jobs/2026-11-21__13-46-05/reconcile-bug__stbD84M",
+    "task_id": {
+        "path": "tasks/reconcile-bug"
+    },
+    "source": null,
+    "task_checksum": "163ed6f5465660c596568125342baaeefb92bbcf7224a59b3423cab87208b24a",
+    "config": {
+        "schema_version": 1,
+        "task": {
+            "path": "tasks/reconcile-bug",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "reconcile-bug__stbD84M",
+        "trials_dir": "jobs/2026-11-21__13-46-05",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "terminus-2",
+            "import_path": null,
+            "model_name": "fireworks_ai/accounts/fireworks/models/gpt-oss-120b",
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "override_error_policy": {},
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "0a9c87f7-40c6-4597-a009-91332f678f22",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "terminus-2",
+        "version": "2.0.0",
+        "model_info": {
+            "name": "accounts/fireworks/models/gpt-oss-120b",
+            "provider": "fireworks_ai"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 47645,
+        "n_cache_tokens": 38029,
+        "n_output_tokens": 6918,
+        "cost_usd": 0.006163634999999999,
+        "model_usage": {
+            "fireworks_ai/accounts/fireworks/models/gpt-oss-120b": {
+                "n_input_tokens": 47645,
+                "n_cache_tokens": 38029,
+                "n_output_tokens": 6918,
+                "cost_usd": 0.006163634999999999
+            }
+        },
+        "rollout_details": [],
+        "metadata": {
+            "n_episodes": 7,
+            "api_request_times_msec": [
+                4306.1041831970215,
+                20287.54687309265,
+                11620.65839767456,
+                16141.145467758179,
+                13296.148538589478,
+                1956.5050601959229,
+                1283.432960510254
+            ],
+            "summarization_count": 0
+        }
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-21T08:17:32.426019Z",
+    "finished_at": "2026-11-21T08:19:18.522365Z",
+    "environment_setup": {
+        "started_at": "2026-11-21T08:17:32.430213Z",
+        "finished_at": "2026-11-21T08:17:35.756047Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-21T08:17:35.756077Z",
+        "finished_at": "2026-11-21T08:17:46.265832Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-21T08:17:46.266327Z",
+        "finished_at": "2026-11-21T08:19:07.004304Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-21T08:19:07.328677Z",
+        "finished_at": "2026-11-21T08:19:07.966748Z"
+    },
+    "step_results": null,
+    "reward_valid": true
+}

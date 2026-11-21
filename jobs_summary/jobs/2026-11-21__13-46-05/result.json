@@ -1,0 +1,44 @@
+{
+    "schema_version": 1,
+    "id": "0a9c87f7-40c6-4597-a009-91332f678f22",
+    "started_at": "2026-11-21T13:46:07.736821",
+    "updated_at": "2026-11-21T13:50:40.953345",
+    "finished_at": "2026-11-21T13:50:40.953345",
+    "n_total_trials": 3,
+    "stats": {
+        "n_completed_trials": 3,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "terminus-2__accounts/fireworks/models/gpt-oss-120b__adhoc": {
+                "n_trials": 3,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "pass_at_k": {
+                    "2": 1.0
+                },
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "reconcile-bug__68uFQ5h",
+                            "reconcile-bug__stbD84M",
+                            "reconcile-bug__dYHBC52"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 100214,
+        "n_cache_tokens": 76024,
+        "n_output_tokens": 17594,
+        "cost_usd": 0.015325259999999999
+    }
+}

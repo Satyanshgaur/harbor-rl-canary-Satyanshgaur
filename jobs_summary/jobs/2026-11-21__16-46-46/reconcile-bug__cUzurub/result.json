@@ -1,0 +1,124 @@
+{
+    "schema_version": 1,
+    "id": "d7233538-3a2f-4df4-bca1-964d357fde79",
+    "task_name": "satyansh/reconcile-bug",
+    "trial_name": "reconcile-bug__cUzurub",
+    "trial_uri": "file:///home/satyansh/harbor-rl-canary-Satyanshgaur/jobs/2026-11-21__16-46-46/reconcile-bug__cUzurub",
+    "task_id": {
+        "path": "tasks/reconcile-bug"
+    },
+    "source": null,
+    "task_checksum": "1bd1e1c64efa41f38c99f8a07e28a8b3bc0b508a94191b299d91aa4d6b8201e5",
+    "config": {
+        "schema_version": 1,
+        "task": {
+            "path": "tasks/reconcile-bug",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "reconcile-bug__cUzurub",
+        "trials_dir": "jobs/2026-11-21__16-46-46",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "override_error_policy": {},
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "6b1eca9e-29c8-46a2-bb88-e56a37fbee68",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-11-21T11:16:46.734852Z",
+    "finished_at": "2026-11-21T11:17:03.103776Z",
+    "environment_setup": {
+        "started_at": "2026-11-21T11:16:46.755350Z",
+        "finished_at": "2026-11-21T11:16:50.369858Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-21T11:16:50.369901Z",
+        "finished_at": "2026-11-21T11:16:50.369952Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-21T11:16:50.370016Z",
+        "finished_at": "2026-11-21T11:16:50.370505Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-21T11:16:50.737280Z",
+        "finished_at": "2026-11-21T11:16:52.493128Z"
+    },
+    "step_results": null,
+    "reward_valid": true
+}
