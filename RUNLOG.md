@@ -7,3 +7,5 @@
 - 2026-11-21 13:46 RUN 2 ABLATION (one malformed-timestamp row TX7 added to instruction example) -> 3/3 (jobs/2026-11-21__13-46-05). All 3 ran the example, saw 138.49 vs 130.49, added strict timestamp regex; final scripts reject all 7 lenient forms (generalized beyond the hint). Remaining gaps: accept +05:60 offsets and non-ASCII digits (\d).
 - 2026-11-21 16:06 dense naive verifier: nop 0.00, oracle 1.00, partial oracle (Bug 3 left in) 0.50 (jobs/2026-11-21__16-06-30)
 - 2026-11-21 16:24 hack.sh vs NAIVE dense verifier -> 1.00 (jobs/2026-11-21__16-24-00): stub prints /tests/caseN.expected.json
+- 2026-11-21 HARDENED verifier (random inputs per group + hidden reference + candidate runs as nobody + /tests locked): nop jobs/2026-11-21__16-46-46/result.json 0.00, oracle jobs/2026-11-21__16-47-07/result.json 1.00, hack.sh jobs/2026-11-21__16-47-29/result.json 0.00
+- Re-scored 6 trial final scripts under hardened verifier (3 seeds each): Run 1 = 0.50 x3, Run 2 = 1.00 x3
